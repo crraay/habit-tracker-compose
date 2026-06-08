@@ -1,0 +1,16 @@
+# Local development: copy to docker-compose.override.yml (gitignored) when sibling app repos exist.
+#   cp docker-compose.override.example.yml docker-compose.override.yml
+#
+# Expects:
+#   ../habit-tracker-springboot
+#   ../habit-tracker-angular
+services:
+  backend:
+    build:
+      context: ../habit-tracker-springboot
+    image: docker.io/crraay/habit-tracker-springboot:latest
+
+  frontend:
+    build:
+      context: ../habit-tracker-angular
+    image: docker.io/crraay/habit-tracker-angular:latest
